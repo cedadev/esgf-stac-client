@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: esgf-stac-client
+Version: 0.0
+Summary: A Python client to access ESGF STAC data
+Home-page: https://github.com/cedadev/esgf-stac-client
+Author: Mahir Rahman
+Author-email: kazi.mahir@stfc.ac.uk
+License: BSD 2-Clause License
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.8
