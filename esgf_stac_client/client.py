@@ -56,8 +56,7 @@ class ESGFStacClient(Client):
                 filter_lang=filter_lang,
                 sortby=sortby,
                 fields=fields,
-                q=q,
-                source=source
+                q=q
             )
         elif doctype == "assets" or doctype == "files":
             if collections:
