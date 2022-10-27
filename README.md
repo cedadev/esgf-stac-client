@@ -17,12 +17,21 @@ cd stac/
 module load jaspy # If running on a `sci` server, if not, just make sure you have a python3 installed
 
 python -m venv stac-venv
-source stac-venv/bin/activate
 
+# Make a setup-env file (to use each time you want to set the environment)
+echo "source stac-venv/bin/activate" > setup-env.sh
+
+# Set the environment
+source ./setup-env.sh
+
+# If using a github token do the following
 gh_user_token="GITHUB_ID:GITHUB_ACCESS_TOKEN"
-
-# Clone local versions of the repositories that we might modify
 git clone https://${gh_user_token}@github.com/cedadev/pystac-client
+git clone https://${gh_user_token}@github.com/cedadev/esgf-stac-client
+
+# Else if using github SSH keys, do
+git clone git+https://github.com/cedadev/pystac-client
+git clone git+https://github.com/cedadev/esgf-stac-client
 
 # Go in and change to our working branch, and install dependencies
 cd pystac-client/
@@ -32,7 +41,6 @@ pip install -e .
 
 cd ../
 
-git clone https://${gh_user_token}@github.com/cedadev/esgf-stac-client
 cd esgf-stac-client/
 
 pip install -e  .
