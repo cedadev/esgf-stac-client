@@ -13,3 +13,4 @@ def load_test_data():
     Can be used as an argument to a unit test.
     """
     THING["data"] = "hi"
+
