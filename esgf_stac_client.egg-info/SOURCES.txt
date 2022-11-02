@@ -1,9 +1,0 @@
-LICENSE
-README.md
-setup.py
-esgf_stac_client/__init__.py
-esgf_stac_client/client.py
-esgf_stac_client.egg-info/PKG-INFO
-esgf_stac_client.egg-info/SOURCES.txt
-esgf_stac_client.egg-info/dependency_links.txt
-esgf_stac_client.egg-info/top_level.txt

@@ -1,0 +1,10 @@
+.idea
+*.egg-info
+*venv
+__pycache__
+*.pyc
+docs/build/
+.DS_Store
+.package.lock
+.lock
+GLOB-0.log
