@@ -29,3 +29,36 @@ def test_search_for_instance_id_returns_correct_item():
 
     item = next(res.items())
     assert item.properties["instance_id"][0] == instance_id
+
+def test_item_search_returns_correct_count():
+    client = ESGFStacClient.open(API_URL)
+    search = client.search()
+    n_items = search.matched()
+    assert n_items == 677813
+
+
+def test_asset_search_returns_correct_count():
+    client = ESGFStacClient.open(API_URL)
+    a_search = client.asset_search()
+    n_assets = a_search.matched()
+    assert n_assets == 6137991
+
+def test_item_search_on_facet_single():
+    client = ESGFStacClient.open(API_URL)
+    res = client.search(project='CMIP6')
+    for item in res.items():
+        assert item.properties['project'] == ['CMIP6']
+
+def test_item_search_on_facet_multi():
+    client = ESGFStacClient.open(API_URL)
+    res = client.search(pid='hdl:21.14100/cbc76f50-84a1-30ed-8c06-4a60868161ae', data_node='esgf-data3.ceda.ac.uk')
+    for item in res.items():
+        assert item.properties['pid'] == ['hdl:21.14100/cbc76f50-84a1-30ed-8c06-4a60868161ae']
+        assert item.properties['data_node'] == ['esgf-data3.ceda.ac.uk']
+
+# def test_asset_search_within_one_item():
+#     client = ESGFStacClient.open(API_URL)
+#     instance_id = "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105"
+#     res = client.search(instance_id=instance_id)
+#     item = next(res.items())
+#     assert item.get_asset()
