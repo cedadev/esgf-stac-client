@@ -56,9 +56,9 @@ def test_item_search_on_facet_multi():
         assert item.properties['pid'] == ['hdl:21.14100/cbc76f50-84a1-30ed-8c06-4a60868161ae']
         assert item.properties['data_node'] == ['esgf-data3.ceda.ac.uk']
 
-# def test_asset_search_within_one_item():
-#     client = ESGFStacClient.open(API_URL)
-#     instance_id = "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105"
-#     res = client.search(instance_id=instance_id)
-#     item = next(res.items())
-#     assert item.get_asset()
+def test_asset_search_within_one_item():
+    client = ESGFStacClient.open(API_URL)
+    instance_id = "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105"
+    res = client.search(instance_id=instance_id)
+    item = next(res.items())
+    assert item.get_assets() == item.assets
