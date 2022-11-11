@@ -1,0 +1,207 @@
+{
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "id": "6d3a29973df4e498b6be84f02908cfda",
+    "properties": {
+        "master_id": [
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn"
+        ],
+        "access": [
+            "Globus",
+            "GridFTP",
+            "HTTPServer",
+            "OPENDAP"
+        ],
+        "experiment_title": [
+            "coupled future 2015-2050 using a scenario as close to CMIP5 RCP8.5 as possible within CMIP6"
+        ],
+        "start_datetime": "2015-01-01T00:00:00.000Z",
+        "end_datetime": "2050-12-30T00:00:00.000Z",
+        "citation_url": [
+            "http://cera-www.dkrz.de/WDCC/meta/CMIP6/CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.json"
+        ],
+        "data_specs_version": [
+            "01.00.23"
+        ],
+        "variable_units": [
+            "K"
+        ],
+        "project": [
+            "CMIP6"
+        ],
+        "pid": [
+            "hdl:21.14100/cbc76f50-84a1-30ed-8c06-4a60868161ae"
+        ],
+        "index_node": [
+            "esgf-index4.ceda.ac.uk"
+        ],
+        "table_id": [
+            "day"
+        ],
+        "institution_id": [
+            "MOHC"
+        ],
+        "frequency": [
+            "day"
+        ],
+        "max_lat": 89.8828125,
+        "variant_label": [
+            "r1i1p1f1"
+        ],
+        "variable_id": [
+            "tas"
+        ],
+        "activity_id": [
+            "HighResMIP"
+        ],
+        "min_lat": -89.8828125,
+        "member_id": [
+            "r1i1p1f1"
+        ],
+        "sub_experiment_id": [
+            "none"
+        ],
+        "mip_era": [
+            "CMIP6"
+        ],
+        "product": [
+            "model-output"
+        ],
+        "model_cohort": [
+            "Registered"
+        ],
+        "data_node": [
+            "esgf-data3.ceda.ac.uk"
+        ],
+        "experiment_id": [
+            "highres-future"
+        ],
+        "max_lon": 359.82421875,
+        "variable_long_name": [
+            "Near-Surface Air Temperature"
+        ],
+        "dataset_id": [
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105|esgf-data3.ceda.ac.uk"
+        ],
+        "source_type": [
+            "AOGCM"
+        ],
+        "cf_standard_name": [
+            "air_temperature"
+        ],
+        "metadata_format": [
+            "THREDDS"
+        ],
+        "activity_drs": [
+            "HighResMIP"
+        ],
+        "dataset_id_template_": [
+            "%(mip_era)s.%(activity_drs)s.%(institution_id)s.%(source_id)s.%(experiment_id)s.%(member_id)s.%(table_id)s.%(variable_id)s.%(grid_label)s"
+        ],
+        "min_lon": 0.1757809966802597,
+        "further_info_url": [
+            "https://furtherinfo.es-doc.org/CMIP6.MOHC.HadGEM3-GC31-HH.highres-future.none.r1i1p1f1"
+        ],
+        "instance_id": [
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105"
+        ],
+        "grid": [
+            "N512"
+        ],
+        "grid_label": [
+            "gn"
+        ],
+        "file_id": [
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20150101-20151230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20160101-20161230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20170101-20171230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20180101-20181230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20190101-20191230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20200101-20201230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20210101-20211230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20220101-20221230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20230101-20231230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20240101-20241230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20250101-20251230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20260101-20261230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20270101-20271230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20280101-20281230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20290101-20291230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20300101-20301230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20310101-20311230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20320101-20321230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20330101-20331230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20340101-20341230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20350101-20351230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20360101-20361230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20370101-20371230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20380101-20381230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20390101-20391230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20400101-20401230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20410101-20411230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20420101-20421230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20430101-20431230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20440101-20441230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20450101-20451230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20460101-20461230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20470101-20471230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20480101-20481230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20490101-20491230.nc|esgf-data3.ceda.ac.uk",
+            "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105.tas_day_HadGEM3-GC31-HH_highres-future_r1i1p1f1_gn_20500101-20501230.nc|esgf-data3.ceda.ac.uk"
+        ],
+        "variable": [
+            "tas"
+        ],
+        "realm": [
+            "atmos"
+        ],
+        "nominal_resolution": [
+            "50 km"
+        ],
+        "dataset_version": [
+            "20191105"
+        ],
+        "source_id": [
+            "HadGEM3-GC31-HH"
+        ],
+        "datetime": null
+    },
+    "geometry": null,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://api.stac.ceda.ac.uk/collections/cmip6/items/6d3a29973df4e498b6be84f02908cfda",
+            "type": "application/geo+json"
+        },
+        {
+            "rel": "parent",
+            "href": "https://api.stac.ceda.ac.uk/collections/cmip6",
+            "type": "application/json"
+        },
+        {
+            "rel": "collection",
+            "href": "https://api.stac.ceda.ac.uk/collections/cmip6",
+            "type": "application/json"
+        },
+        {
+            "rel": "root",
+            "href": "https://api.stac.ceda.ac.uk",
+            "type": "application/json",
+            "title": "CEDA STAC API"
+        },
+        {
+            "rel": "assets",
+            "href": "https://api.stac.ceda.ac.uk/collections/cmip6/items/6d3a29973df4e498b6be84f02908cfda/assets",
+            "type": "application/json"
+        }
+    ],
+    "assets": {},
+    "bbox": [
+        -179.82421900331974,
+        -89.8828125,
+        179.82421875,
+        89.8828125
+    ],
+    "stac_extensions": [],
+    "collection": "cmip6"
+}
