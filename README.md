@@ -26,23 +26,27 @@ source ./setup-env.sh
 
 # If using a github token do the following
 gh_user_token="GITHUB_ID:GITHUB_ACCESS_TOKEN"
+git clone https://${gh_user_token}@github.com/cedadev/pystac
 git clone https://${gh_user_token}@github.com/cedadev/pystac-client
 git clone https://${gh_user_token}@github.com/cedadev/esgf-stac-client
 
 # Else if using github SSH keys, do
+git clone git+https://github.com/cedadev/pystac
 git clone git+https://github.com/cedadev/pystac-client
 git clone git+https://github.com/cedadev/esgf-stac-client
 
-# Go in and change to our working branch, and install dependencies
+# Go in and change to our working branches, and install dependencies
+cd pystac/
+git checkout asset-search
+pip install -e .
+cd ../
+
 cd pystac-client/
 git checkout asset-search
-
 pip install -e .
-
 cd ../
 
 cd esgf-stac-client/
-
 pip install -e  .
 
 # Install requirements for development, e.g. "pytest"
