@@ -36,9 +36,11 @@ git clone git+https://github.com/cedadev/pystac-client
 git clone git+https://github.com/cedadev/esgf-stac-client
 
 # Go in and change to our working branches, and install dependencies
-cd pystac/
-git checkout asset-search
-pip install -e .
+cd esgf-stac-client/
+pip install -e  .
+
+# Install requirements for development, e.g. "pytest"
+pip install -r requirements_dev.txt
 cd ../
 
 cd pystac-client/
@@ -46,12 +48,12 @@ git checkout asset-search
 pip install -e .
 cd ../
 
+cd pystac/
+git checkout asset-search
+pip install -e .
+cd ../
+
 cd esgf-stac-client/
-pip install -e  .
-
-# Install requirements for development, e.g. "pytest"
-pip install -r requirements_dev.txt
-
 # Run the tests
 python -m pytest -v tests
 ```
