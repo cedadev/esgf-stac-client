@@ -26,7 +26,7 @@ def test_1_2_single_datetime():
     for item in result.items():
         item_start_datetime = parser.isoparse(item.properties['start_datetime'])
         item_end_datetime = parser.isoparse(item.properties['end_datetime'])
-        assert item_start_datetime <= my_datetime <= item_end_datetime
+        assert item_start_datetime == my_datetime == item_end_datetime
 
 def test_1_3_lower_bounded_datetime():
     result = client.search(datetime='3180-01-01/..')
@@ -90,7 +90,7 @@ def test_2_2_single_datetime(load_test_data):
     for asset in assets:
         asset_start_datetime = parser.isoparse(asset.properties['start_datetime'])
         asset_end_datetime = parser.isoparse(asset.properties['end_datetime'])
-        assert asset_start_datetime <= my_datetime <= asset_end_datetime
+        assert asset_start_datetime == my_datetime == asset_end_datetime
 
 def test_2_3_lower_bounded_datetime(load_test_data):
     item = TEST_ITEM['data']

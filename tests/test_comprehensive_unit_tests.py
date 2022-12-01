@@ -14,7 +14,7 @@ def setup_module():
     client = ESGFStacClient.open(API_URL)
 
 
-def test_get_post_number_of_items():
+def test_1_get_post_number_of_items():
     res_get = client.search(data_node='esgf-data3.ceda.ac.uk', method='GET')
     res_post = client.search(data_node='esgf-data3.ceda.ac.uk', method='POST')
 
@@ -26,6 +26,31 @@ def test_get_post_number_of_items():
     for a, b in zip(l1, l2):
         assert a == b
 
+def test_3_passing_item_objects():
+    result = client.search()
+    ig = result.items()
+    item1 = next(ig)
+    item2 = next(ig)
+    assets1 = item1.get_assets()
+    assets2 = item2.get_assets()
+    no_assets1 = len([a for a in assets1] + [a for a in assets2])
+    
+    ag = client.asset_search(items=[item1, item2])
+    no_assets2 = len([a for a in ag])
+
+    assert no_assets1 == no_assets2
+
+
+def test_4_max_item_argument():
+    MAX_ITEMS = 10
+
+    res = client.search(max_items=MAX_ITEMS)
+
+    items = [i for i in res.items()]
+    assert len(items) == MAX_ITEMS
+
+    
+    
 
 def test_getting_collection_object_and_passing_to_the_search():
     colls = client.get_collections()
@@ -49,7 +74,7 @@ def test_getting_item_object_and_passing_to_the_search(load_test_data):
     assert TEST_ITEM['data'] == res
 
 
-def test_mapping_1():
+def test_8_1_mapping():
     res_1 = client.search(doctype='item')
     res_2 = client.search()
 
@@ -58,7 +83,7 @@ def test_mapping_1():
     assert res_1.__dict__ == res_2.__dict__
 
 
-def test_mapping_2():
+def test_8_2_mapping():
     res_1 = client.search(doctype='dataset')
     res_2 = client.search()
 
@@ -67,7 +92,7 @@ def test_mapping_2():
     assert res_1.__dict__ == res_2.__dict__
 
 
-def test_mapping_3():
+def test_8_3_mapping():
     res_1 = client.search(doctype='asset') 
     res_2 = client.asset_search()
 
@@ -76,7 +101,7 @@ def test_mapping_3():
     assert res_1.__dict__ == res_2.__dict__
 
 
-def test_mapping_4():
+def test_8_4_mapping():
     res_1 = client.search(doctype='item')
     res_2 = client.asset_search()
 
@@ -86,13 +111,8 @@ def test_mapping_4():
 
 
 @pytest.mark.xfail(reason='Doctype is not know')
-def test_mapping_5():
+def test_8_5_mapping():
     assert client.search(doctype='other')
 
-def test_max_item_argument():
-    MAX_ITEMS = 10
 
-    res = client.search(max_items=MAX_ITEMS)
 
-    items = [i for i in res.items()]
-    assert len(items) == MAX_ITEMS
