@@ -17,5 +17,8 @@ def test_1():
     result = client.search(q='*rain*')
 
     for item in result.items():
+        rain = False
         for attribute in item.properties.values():
-            assert 'rain' in attribute
+            if 'rain' in str(attribute):
+                rain = True
+        assert rain
