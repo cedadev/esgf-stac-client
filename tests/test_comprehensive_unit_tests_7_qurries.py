@@ -1,5 +1,6 @@
 import os
 import pytest
+import re
 
 from .conftest import THING, API_URL, TEST_ITEM
 

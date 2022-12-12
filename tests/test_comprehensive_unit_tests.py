@@ -42,7 +42,7 @@ def test_3_passing_item_objects():
     assert no_assets1 == no_assets2
 
 
-def test_4_max_item_argument():
+def test_4_1_max_item_argument():
     MAX_ITEMS = 10
 
     res = client.search(max_items=MAX_ITEMS)
@@ -50,6 +50,13 @@ def test_4_max_item_argument():
     items = [i for i in res.items()]
     assert len(items) == MAX_ITEMS
 
+def test_4_2_max_pages_argument():
+    LIMIT = 10
+
+    res = client.search(limit=LIMIT, datetime='3000-01-01/..')
+
+    for page in res.item_collections():
+        assert LIMIT >= sum([1 for _ in page.items])
     
     
 
