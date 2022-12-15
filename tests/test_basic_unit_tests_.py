@@ -1,4 +1,3 @@
-import os
 import pytest
 
 from .conftest import THING, API_URL, TEST_ITEM

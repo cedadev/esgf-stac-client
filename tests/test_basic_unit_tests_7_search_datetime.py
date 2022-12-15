@@ -117,4 +117,84 @@ def test_2_5_full_time_datetime(load_test_data):
         asset_end_datetime = parser.isoparse(asset.properties['end_datetime'])
         assert (my_start_datetime <= asset_start_datetime <= my_end_datetime) or (my_start_datetime <= asset_end_datetime <= my_end_datetime)
 
-    
+
+def test_2_6_1_single_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item=item, datetime='3581-01-01')
+    assert result.matched() == 0
+
+def test_2_6_2_single_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item=[item], datetime='3581-01-01')
+    assert result.matched() == 0
+
+def test_2_6_3_single_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item="CMIP6.CMIP.NASA-GISS.GISS-E2-1-H.piControl.r1i1p1f1.Omon.zostoga.gn.v20190410", datetime='3581-01-01')
+    assert result.matched() == 0
+
+def test_2_6_4_single_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item=["CMIP6.CMIP.NASA-GISS.GISS-E2-1-H.piControl.r1i1p1f1.Omon.zostoga.gn.v20190410"], datetime='3581-01-01')
+    assert result.matched() == 0
+
+def test_2_7_1_lower_bounded_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item=item, datetime='3581-01-01/..')
+    assert result.matched() == 0
+
+def test_2_7_2_lower_bounded_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item=[item], datetime='3581-01-01/..')
+    assert result.matched() == 0
+
+def test_2_7_3_lower_bounded_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item="CMIP6.CMIP.NASA-GISS.GISS-E2-1-H.piControl.r1i1p1f1.Omon.zostoga.gn.v20190410", datetime='3581-01-01/..')
+    assert result.matched() == 0
+
+def test_2_7_4_lower_bounded_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item=["CMIP6.CMIP.NASA-GISS.GISS-E2-1-H.piControl.r1i1p1f1.Omon.zostoga.gn.v20190410"], datetime='3581-01-01/..')
+    assert result.matched() == 0
+
+def test_2_8_1_upper_bounded_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item=item, datetime='../3170-01-01')
+    assert result.matched() == 0
+
+def test_2_8_2_upper_bounded_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item=[item], datetime='../3170-01-01')
+    assert result.matched() == 0
+
+def test_2_8_3_upper_bounded_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item="CMIP6.CMIP.NASA-GISS.GISS-E2-1-H.piControl.r1i1p1f1.Omon.zostoga.gn.v20190410", datetime='../3170-01-01')
+    assert result.matched() == 0
+
+def test_2_8_4_upper_bounded_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item=["CMIP6.CMIP.NASA-GISS.GISS-E2-1-H.piControl.r1i1p1f1.Omon.zostoga.gn.v20190410"], datetime='../3170-01-01')
+    assert result.matched() == 0
+
+def test_2_9_1_full_time_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item=item, datetime='3150-01-01/3170-01-01')
+    assert result.matched() == 0
+
+def test_2_9_2_full_time_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item=[item], datetime='3150-01-01/3170-01-01')
+    assert result.matched() == 0
+
+def test_2_9_3_full_time_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item="CMIP6.CMIP.NASA-GISS.GISS-E2-1-H.piControl.r1i1p1f1.Omon.zostoga.gn.v20190410", datetime='3150-01-01/3170-01-01')
+    assert result.matched() == 0
+
+def test_2_9_4_full_time_datetime():
+    item = TEST_ITEM['data']
+    result = client.asset_search(item=["CMIP6.CMIP.NASA-GISS.GISS-E2-1-H.piControl.r1i1p1f1.Omon.zostoga.gn.v20190410"], datetime='3150-01-01/3170-01-01')
+    assert result.matched() == 0
+

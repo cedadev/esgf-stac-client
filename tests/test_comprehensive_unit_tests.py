@@ -124,3 +124,35 @@ def test_8_5_mapping():
 
 
 
+def test_11_1_latest_boolean():
+    result = client.search(master_id='CMIP6.CMIP.MOHC.UKESM1-0-LL.piControl.r1i1p1f2.Amon.hus.gn', latest=True)
+    next(result.items())
+    assert False 
+
+def test_11_2_latest_string():
+    result = client.search(master_id='CMIP6.CMIP.MOHC.UKESM1-0-LL.piControl.r1i1p1f2.Amon.hus.gn', latest='true')
+    next(result.items())
+    assert False 
+
+def test_12_1_version():
+    version = '20190410'
+    result = client.search(master_id='CMIP6.CMIP.MOHC.UKESM1-0-LL.piControl.r1i1p1f2.Amon.hus.gn', dataset_version=version)
+    assert result.matched() == 1
+    item = next(result.items())
+    assert item.properties['dataset_version'][0] == version
+
+
+def test_12_2_version():
+    version = '20200630'
+    result = client.search(master_id='CMIP6.CMIP.MOHC.UKESM1-0-LL.piControl.r1i1p1f2.Amon.hus.gn', dataset_version=version)
+    assert result.matched() == 1
+    item = next(result.items())
+    assert item.properties['dataset_version'][0] == version
+
+@pytest.mark.xfail(reason='Given version is does not match version of any item under given master_id')
+def test_12_3_version():
+    version = '21372020'
+    result = client.search(master_id='CMIP6.CMIP.MOHC.UKESM1-0-LL.piControl.r1i1p1f2.Amon.hus.gn', dataset_version=version)
+    assert result.matched() == 1
+    item = next(result.items())
+    assert item.properties['dataset_version'][0] == version

@@ -14,12 +14,20 @@ def setup_module():
     global client
     client = ESGFStacClient.open(API_URL)
 
-def test_1():
-    result = client.search(q='*rain*')
+def test_1_whole_word():
+    word = 'humidity'
+
+    result = client.search(q=word)
 
     for item in result.items():
-        rain = False
+        found = False
         for attribute in item.properties.values():
-            if 'rain' in str(attribute):
-                rain = True
-        assert rain
+            if isinstance(attribute, list):
+                for i in attribute:
+                    if word == i:
+                        found = True
+            else:
+                if word == str(attribute):
+                    found = True
+                    
+        assert found
