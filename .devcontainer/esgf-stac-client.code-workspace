@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../my_workspaces/pystac"
+		},
+		{
+			"path": "../../../my_workspaces/pystac-client"
+		}
+	],
+	"settings": {}
+}
