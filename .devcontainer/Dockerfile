@@ -28,9 +28,7 @@ RUN cd /my_workspaces/ \
     && pip install -e . --no-deps
 
 # Install main repo - excluding 
-RUN cd /my_workspaces/ \
-    && git clone -b asset-search https://github.com/cedadev/pystac \
-    && cd pystac/ \
-    && pip install -r requirements-dev.txt \
+RUN cd /workspaces/esgf-stac-client/ \
+    && pip install -r requirements_dev.txt \
     && pip install -e . --no-deps
 
