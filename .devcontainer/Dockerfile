@@ -9,26 +9,3 @@ RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bi
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
-
-# Clone other packages for use in develop mode
-RUN mkdir -p /my_workspaces
-# Install Pystac
-RUN cd /my_workspaces/ \
-    && git clone -b asset-search https://github.com/cedadev/pystac \
-    && cd pystac/ \
-    && pip install -r requirements-dev.txt \
-    && pip install -e . --no-deps
-# Install Pystac-client
-RUN cd /my_workspaces/ \
-    && git clone -b asset-search https://github.com/cedadev/pystac-client \
-    && cd pystac-client/ \
-    && perl -p -i -w -e 's/pystac==1.4.0/#pystac==1.4.0/g' requirements-min.txt \
-    && pip install -r requirements-min.txt \
-    && pip install -r requirements-dev.txt \
-    && pip install -e . --no-deps
-
-# Install main repo - excluding 
-RUN cd /workspaces/esgf-stac-client/ \
-    && pip install -r requirements_dev.txt \
-    && pip install -e . --no-deps
-
