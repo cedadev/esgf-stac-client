@@ -25,8 +25,6 @@ RUN cd /workspaces/ \
     && pip install -r requirements-min.txt \
     && pip install -r requirements-dev.txt \
     && pip install -e . --no-deps
-
-# USER vscode
-
-# RUN git config --global --add safe.directory /workspaces/pystac
-# RUN git config --global --add safe.directory /workspaces/pystac-client
+# Mark installed repos as safe
+RUN git config --system --add safe.directory /workspaces/pystac
+RUN git config --system --add safe.directory /workspaces/pystac-client
