@@ -21,7 +21,7 @@ RUN cd /workspaces/ \
 RUN cd /workspaces/ \
     && git clone -b asset-search https://github.com/cedadev/pystac-client \
     && cd pystac-client/ \
-    && perl -p -i -w -e 's/pystac==1.4.0/#pystac==1.4.0/g' requirements-min.txt \
+    && perl -p -i -w -e 's/^pystac==1.4.0/#pystac==1.4.0/g' requirements-min.txt \
     && pip install -r requirements-min.txt \
     && pip install -r requirements-dev.txt \
     && pip install -e . --no-deps
