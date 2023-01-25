@@ -25,6 +25,18 @@ RUN cd /workspaces/ \
     && pip install -r requirements-min.txt \
     && pip install -r requirements-dev.txt \
     && pip install -e . --no-deps
+#Install stac-fastapi-elasticsearch
+RUN cd /workspaces/ \
+    && git clone https://github.com/cedadev/stac-fastapi-elasticsearch \
+    && cd stac-fastapi-elasticsearch/ \
+    && pip install -r requirements.txt \
+    && pip install django-flexi-settings==0.1.1 \
+    && pip install -e .[server,dev]
+
+COPY .devcontainer/settings.py /workspaces/stac-fastapi-elasticsearch/stac_fastapi/elasticsearch/settings.py
+
+RUN mkdir -p /etc/fastapi/settings.d
 # Mark installed repos as safe
 RUN git config --system --add safe.directory /workspaces/pystac
 RUN git config --system --add safe.directory /workspaces/pystac-client
+RUN git config --system --add safe.directory /workspaces/stac-fastapi-elasticsearch

@@ -8,4 +8,3 @@ docs/build/
 .package.lock
 .lock
 GLOB-0.log
-*/fastapi_settings.py
