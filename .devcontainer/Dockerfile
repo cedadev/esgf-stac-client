@@ -35,7 +35,6 @@ RUN cd /workspaces/ \
 
 COPY .devcontainer/settings.py /workspaces/stac-fastapi-elasticsearch/stac_fastapi/elasticsearch/settings.py
 
-RUN mkdir -p /etc/fastapi/settings.d
 # Mark installed repos as safe
 RUN git config --system --add safe.directory /workspaces/pystac
 RUN git config --system --add safe.directory /workspaces/pystac-client
