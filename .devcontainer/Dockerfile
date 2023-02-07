@@ -35,7 +35,11 @@ RUN cd /workspaces/ \
 
 COPY .devcontainer/settings.py /workspaces/stac-fastapi-elasticsearch/stac_fastapi/elasticsearch/settings.py
 
+# Update packages so unit tests work in container
+RUN pip install --upgrade pip pyopenssl
+
 # Mark installed repos as safe
 RUN git config --system --add safe.directory /workspaces/pystac
 RUN git config --system --add safe.directory /workspaces/pystac-client
 RUN git config --system --add safe.directory /workspaces/stac-fastapi-elasticsearch
+
