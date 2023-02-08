@@ -43,3 +43,6 @@ RUN git config --system --add safe.directory /workspaces/pystac
 RUN git config --system --add safe.directory /workspaces/pystac-client
 RUN git config --system --add safe.directory /workspaces/stac-fastapi-elasticsearch
 
+RUN chown -R vscode:vscode /workspaces/pystac
+RUN chown -R vscode:vscode /workspaces/pystac-client
+RUN chown -R vscode:vscode /workspaces/stac-fastapi-elasticsearch
