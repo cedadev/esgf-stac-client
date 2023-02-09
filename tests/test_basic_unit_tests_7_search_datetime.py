@@ -19,6 +19,7 @@ def test_1_1_without_datetime_argument():
     result = client.search()
     assert result.matched() > 1
 
+# fails on localhost
 def test_1_2_single_datetime():
     result = client.search(datetime='3580-12-01')
     my_datetime = parser.isoparse('3580-12-01T00:00:00.000Z')

@@ -16,7 +16,8 @@ def test_1_item_search_returns_correct_count():
     search = client.search()
     n_items = search.matched()
     assert n_items == 677813
-    
+
+# fails on localhost
 def test_2_asset_search_returns_correct_count():
     a_search = client.asset_search()
     n_assets = a_search.matched()

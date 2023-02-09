@@ -4,7 +4,7 @@ import pytest
 from pystac.item import Item
 
 THING = {"data": None}
-API_URL = "https://api.stac.ceda.ac.uk"
+API_URL = "http://localhost:8000"
 TEST_ITEM = {"data": None}
 
 @pytest.fixture
