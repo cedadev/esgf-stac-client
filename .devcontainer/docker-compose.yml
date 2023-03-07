@@ -19,7 +19,7 @@ services:
       - ..:/workspaces/esgf-stac-client:cached
     depends_on:
       - database
-    command: bash -c "/workspaces/stac-fastapi-elasticsearch/scripts/wait-for-it.sh database:9200 -t 60 && python -m stac_fastapi.elasticsearch.app"
+    command: bash -c "/workspaces/stac-fastapi-elasticsearch/scripts/wait-for-it.sh database:9200 -t 60 && uvicorn stac_fastapi.elasticsearch.app:app --reload"
   database:
     container_name: stac-elasticsearch
     image: docker.elastic.co/elasticsearch/elasticsearch:7.14.2
@@ -34,8 +34,7 @@ services:
       - 9200:9200
   loadsample-elasticsearch:
     image: cedadev/stac-fastapi-elasticsearch
-    command:
-      bash -c "/workspaces/stac-fastapi-elasticsearch/scripts/wait-for-it.sh database:9200 -t 60 && python /workspaces/stac-fastapi-elasticsearch/scripts/ingest_test_data.py --host http://database:9200"
+    command: bash -c "/workspaces/stac-fastapi-elasticsearch/scripts/wait-for-it.sh database:9200 -t 60 && python /workspaces/stac-fastapi-elasticsearch/scripts/ingest_test_data.py --host http://database:9200"
     depends_on:
       - database
       - app-elasticsearch
