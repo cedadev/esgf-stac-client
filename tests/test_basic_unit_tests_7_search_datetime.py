@@ -76,7 +76,7 @@ def test_1_9_full_time_datetime():
 def test_2_1_without_datetime_argument(load_test_data):
     item = TEST_ITEM['data']
     assets = item.get_assets()
-    assets = [a for a in assets]
+    assets = [a for a in assets] 
     assert assets
      
 def test_2_2_single_datetime(load_test_data):

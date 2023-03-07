@@ -13,7 +13,7 @@ def setup_module():
     global client
     client = ESGFStacClient.open(API_URL)
 
-
+# test fails on local host
 def test_1_get_post_number_of_items():
     res_get = client.search(data_node='esgf-data3.ceda.ac.uk', method='GET')
     res_post = client.search(data_node='esgf-data3.ceda.ac.uk', method='POST')
