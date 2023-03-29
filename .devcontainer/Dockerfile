@@ -27,7 +27,7 @@ RUN cd /workspaces/ \
     && pip install -e . --no-deps
 #Install stac-fastapi-elasticsearch
 RUN cd /workspaces/ \
-    && git clone -b atod https://github.com/cedadev/stac-fastapi-elasticsearch \
+    && git clone -b producing-fixtures https://github.com/cedadev/stac-fastapi-elasticsearch \
     && cd stac-fastapi-elasticsearch/ \
     && pip install -r requirements.txt \
     && pip install django-flexi-settings==0.1.1 \
