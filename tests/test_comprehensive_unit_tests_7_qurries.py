@@ -15,7 +15,7 @@ def setup_module():
     client = ESGFStacClient.open(API_URL)
 
 def test_1_whole_word():
-    word = 'humidity'
+    word = 'atmosphere'
 
     result = client.search(q=word)
 

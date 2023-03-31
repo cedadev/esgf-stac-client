@@ -15,13 +15,13 @@ def setup_module():
 def test_1_item_search_returns_correct_count():
     search = client.search()
     n_items = search.matched()
-    assert n_items == 677813
+    assert n_items == 91
 
 # fails on localhost
 def test_2_asset_search_returns_correct_count():
     a_search = client.asset_search()
     n_assets = a_search.matched()
-    assert n_assets == 6137991
+    assert n_assets == 199
 
 @pytest.mark.xfail(reason='Item.assets is no longer used')
 def test_3_asset_search_within_one_item(load_test_data):
@@ -35,14 +35,15 @@ def test_3_asset_search_within_one_item(load_test_data):
 
     assert get_assets_len == assets_len
 
-
+# id is used instead of instance ID
 def test_4_search_for_instance_id_returns_correct_item():
-    instance_id = "CMIP6.HighResMIP.MOHC.HadGEM3-GC31-HH.highres-future.r1i1p1f1.day.tas.gn.v20191105"
-    res = client.search(instance_id=instance_id)
+    instance_id = "c339d061a18b9cb60924448b07a3e2b0"
+    res = client.search(ids=[instance_id])
     assert res.matched() == 1
 
     item = next(res.items())
-    assert item.properties["instance_id"][0] == instance_id
+
+    assert item.id == instance_id
 
 @pytest.mark.xfail(reason='Asset count is wrong on server-side (not our problem, in the client)')
 def test_5_that_there_are_no_duplicates_in_item():
@@ -56,18 +57,17 @@ def test_5_that_there_are_no_duplicates_in_item():
 
 
 def test_6_1_item_search_on_facet_single():
-    res = client.search(activity_id='HighResMIP')
+    res = client.search(general_data_type='aircraft')
     for item in res.items():
-        assert item.properties['activity_id'] == ['HighResMIP']
+        assert item.properties['general_data_type'] == ['aircraft']
 
 
 def test_6_2_item_search_on_facet_multi():
     res = client.search(
-        pid='hdl:21.14100/cbc76f50-84a1-30ed-8c06-4a60868161ae', data_node='esgf-data3.ceda.ac.uk')
+        general_data_type=['satellites'], inspire_theme=['orthoimagery'])
     for item in res.items():
-        assert item.properties['pid'] == [
-            'hdl:21.14100/cbc76f50-84a1-30ed-8c06-4a60868161ae']
-        assert item.properties['data_node'] == ['esgf-data3.ceda.ac.uk']
+        assert item.properties['general_data_type'] == ['satellites']
+        assert item.properties['inspire_theme'] == ['orthoimagery']
 
 
 

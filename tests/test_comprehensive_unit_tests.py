@@ -53,7 +53,7 @@ def test_4_1_max_item_argument():
 def test_4_2_max_pages_argument():
     LIMIT = 10
 
-    res = client.search(limit=LIMIT, datetime='3000-01-01/..')
+    res = client.search(limit=LIMIT)
 
     for page in res.item_collections():
         assert LIMIT >= sum([1 for _ in page.items])
@@ -67,10 +67,10 @@ def test_getting_collection_object_and_passing_to_the_search():
     res = client.search(collections=[my_collection])
 
     items_from_coll = [i for i in my_collection.get_items()]
-    items_from_coll = sorted(items_from_coll, key=lambda x: x.properties['file_id'])
+    items_from_coll = sorted(items_from_coll, key=lambda x: x.id)
 
     items_from_search = [i for i in res.items()]
-    items_from_search = sorted(items_from_search, key=lambda x: x.properties['file_id'])
+    items_from_search = sorted(items_from_search, key=lambda x: x.id)
 
     for i, j in zip(items_from_coll, items_from_search):
         assert i.__dict__ == j.__dict__ 
