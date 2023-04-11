@@ -1,0 +1,52 @@
+instrument_type,ceilometers,10
+inspire_theme,orthoimagery,15
+inspire_theme,Meteorological geographical features,76
+gemet_topic,atmosphere,76
+gemet_topic,meteorology,76
+gemet_topic,environment,15
+gemet_topic,Climatology,76
+platform,sentinel5p,12
+platform,faam,2
+extension,,1
+extension,.EfNlvm,1
+extension,.txt,2
+extension,.lGSQtu,1
+extension,.Lrlfd2,1
+extension,.dat,1
+extension,.log,1
+extension,.hOYLvx,1
+extension,.szTrPy,1
+extension,.ofOdGj,1
+extension,.gz,1
+extension,.json,1
+extension,.nc,41
+extension,.nc4,1
+extension,.tmp,1
+extension,.56lOfi,1
+extension,.md5sum,1
+flight_number,c279,1
+flight_number,b262,1
+general_data_type,satellites,12
+general_data_type,climate models,42
+general_data_type,aircraft,2
+general_data_type,other mobile platforms,20
+general_data_type,remote sensing instruments,10
+general_data_type,undefined,5
+magic_number,inode/x-empty,2
+magic_number,application/octet-stream,41
+magic_number,application/x-gzip,1
+magic_number,text/plain,1
+magic_number,application/x-hdf,1
+product_version,v2.3,10
+product_version,v2.4,2
+start_datetime,2022-03-25T00:00:00.000Z,0
+start_datetime,2007-01-25T00:00:00.000Z,0
+end_datetime,2022-03-25T00:00:00.000Z,0
+end_datetime,2007-01-25T00:00:00.000Z,0
+permitted_use,commercial,54
+permitted_use,personal,54
+permitted_use,academic,74
+permitted_use,eductational,20
+permitted_use,policy,54
+permitted_use,educational,54
+permitted_use,undefined,2
