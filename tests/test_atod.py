@@ -62,4 +62,54 @@ def test_collections():
     res = client.search(collections=['faam', 'cmip5'])
     assert res.matched() == 44
 
-# def test_filter_not():
+def test_filter_not():
+     with open('properties_test.csv') as f:
+        for line in f:
+            property, value, expected_number_of_hits = line.split(',')
+            search = client.search(filter=f"{property}<>'{value}'")
+            assert search.matched() == 91 - int(expected_number_of_hits), f'Searching for "{property}={value}" returned {search.matched()} assets while {91 - int(expected_number_of_hits)} was expected'
+
+def test_on_multiple_facets():
+    res = client.search(magic_number='application/x-hdf', permitted_use='personal')
+    assert res.matched() == 1
+
+def test_get_and_post():
+    res_get = client.search(method='GET')
+    res_post = client.search(method='POST')
+
+    l1 = sorted([a.id for a in res_get.items()])
+    l2 = sorted([a.id for a in res_post.items()])
+
+    assert len(l1) == len(l2)
+
+    for a, b in zip(l1, l2):
+        assert a == b
+
+def test_collections_argument():
+    res = client.search(collections=['faam'])
+    assert res.matched() == 2
+
+    colls = client.get_collections()
+    colls = [i for i in colls if i.id == 'faam']
+    coll = colls[0]
+    res = client.search(collections=coll)
+    assert res.matched() == 2
+
+def test_items_argument():
+    res = client.search()
+    item = next(res.items())
+    
+    res = client.search(items=[item])
+    assert res.matched() == 1
+
+def test_doc_types():
+    res = client.search()
+    res_mapp = client.search(doctype='item')
+    assert res.matched() == res_mapp.matched()
+
+    res_mapp = client.search(doctype='dataset')
+    assert res.matched() == res_mapp.matched()
+
+    res = client.asset_search()
+    res_mapp = client.search(doctype='asset')
+    assert res.matched() == res_mapp.matched()
